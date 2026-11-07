@@ -1,11 +1,5 @@
 FEATHER GHOST - le copier-coller qui tape lettre par lettre
 
-INSTALLATION (une seule fois)
-  pip install -r requirements.txt
-
-LANCEMENT
-  python feather_ghost.py
-
 UTILISATION
   1. Colle ton texte dans la fenêtre.
   2. Règle la vitesse (et le délai après clic, 1 s par défaut).
@@ -14,9 +8,6 @@ UTILISATION
      En mode arrière-plan (Windows), tu peux ensuite faire autre chose.
   4. Échap = arrêt d'urgence.
 
-CRÉER UN .EXE (Windows)
-  pip install pyinstaller
-  pyinstaller --noconsole --onefile --icon feather_ghost.ico --add-data "feather_ghost.ico;." --name FeatherGhost feather_ghost.py
 
 NOTES
   - macOS : autoriser le Terminal/l'app dans Réglages > Confidentialité > Accessibilité.
