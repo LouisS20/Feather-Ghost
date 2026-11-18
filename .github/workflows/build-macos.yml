@@ -1,0 +1,21 @@
+name: Build macOS
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Construire l'appli, le .pkg et le .dmg
+        run: bash build_macos.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: FeatherGhost-macOS
+          path: |
+            FeatherGhost.dmg
+            FeatherGhost.pkg
