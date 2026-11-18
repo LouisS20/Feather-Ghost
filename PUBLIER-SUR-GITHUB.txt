@@ -1,0 +1,21 @@
+OBTENIR UN VRAI SETUP MAC (.pkg) ET UN .DMG, SANS AVOIR DE MAC
+(GitHub prête gratuitement des Mac dans le cloud pour compiler l'appli)
+
+1. Crée un compte gratuit sur github.com, puis un nouveau dépôt (New repository),
+   public ou privé, par exemple "FeatherGhost".
+2. Dans le dépôt : "Add file" > "Upload files", et glisse TOUT le contenu de ce dossier
+   (feather_ghost.py, feather_ghost.png, build_macos.sh, etc.). Valide ("Commit").
+3. "Add file" > "Create new file". Dans le nom, tape exactement :
+       .github/workflows/build-macos.yml
+   Colle dedans le contenu du fichier github-workflow/build-macos.yml. Valide.
+4. Onglet "Actions" > "Build macOS" > "Run workflow". Attends environ 5 minutes.
+5. Ouvre l'exécution terminée : en bas, dans "Artifacts", télécharge "FeatherGhost-macOS".
+   Dedans : FeatherGhost.pkg (assistant d'installation) et FeatherGhost.dmg (glisser dans Applications).
+
+NOTES
+- Compilé pour les Mac récents (puces Apple M1/M2/M3...). Pour un Mac Intel, il faut le
+  compiler sur un runner Intel : dis-le moi et j'ajuste.
+- L'appli n'est pas signée par Apple (payant) : au premier lancement, clic droit sur
+  l'appli > Ouvrir > Ouvrir. Puis autorise-la dans Réglages Système > Confidentialité
+  et sécurité > Accessibilité et Surveillance de l'entrée.
+- Si tu as un Mac, tu peux aussi lancer directement : bash build_macos.sh

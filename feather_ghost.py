@@ -248,6 +248,11 @@ def find_wordcraft():
         v = os.environ.get(var)
         if v:
             roots += [v, os.path.join(v, "Programs")]
+    if sys.platform == "darwin":
+        for cand in ("/Applications/WordCraft.app/Contents/MacOS/wordcraft",
+                     os.path.expanduser("~/Applications/WordCraft.app/Contents/MacOS/wordcraft")):
+            if os.path.isfile(cand):
+                return cand
     roots += [os.path.expanduser("~/Downloads")]
     for root in roots:
         for sub in ("WordCraft", "wordcraft", ""):
